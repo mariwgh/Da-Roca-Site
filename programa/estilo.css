@@ -1,0 +1,523 @@
+body{
+    background-color: #fffbe4;
+    margin: 0;
+}
+
+main{
+    margin-bottom: 33px;
+}
+
+#logo{
+    width: 170px;
+}
+
+.search-container {
+    display: flex; /* Torna o contêiner flexível */
+    align-items: baseline; /* Alinha os itens verticalmente */
+    margin-left: 11px;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav ul li{
+    display: inline;
+}
+
+nav ul li a {
+    color: #FF730B;
+    padding: 15px;
+    text-decoration: none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 14px;
+}
+
+#header{
+    display: flex;
+    background-color: #013C31;
+    width: auto;
+    height: 70px;
+    padding: 0 22px;
+    justify-content: space-between;
+    align-items: center; 
+}
+
+#pesquisar-form {
+    align-items: center; /* Alinha os itens verticalmente */
+    margin-left: auto; /* Move a caixa de pesquisa e o botão para a direita */
+    display: flex;
+    margin-right: 33px;
+}
+
+#pesquisar-input-text, #pesquisar-input-submit {
+    padding: 5px;
+    font-size: 15px;
+    background-color: #83aaa3;
+    color: white;
+    border: none;
+    border-radius: 0; 
+}
+
+#pesquisar-input-text {
+    border-top-left-radius: 5px; /* Adiciona arredondamento apenas no canto superior esquerdo */
+    border-bottom-left-radius: 5px;
+}
+
+#pesquisar-input-submit {
+    border-top-right-radius: 5px; /* Adiciona arredondamento apenas no canto superior direito */
+    border-bottom-right-radius: 5px;
+    cursor: pointer;
+}
+
+#pesquisar-input-submit:hover {
+    background-color: #FF730B;
+}
+
+.nav-prod{
+    background-color: #285249;
+    text-align: center;
+    padding: 1px;
+    position: relative;
+}
+
+.nav-prod ul li a{
+    font-size: 15px;
+}
+
+.nav-prod ul li a:hover{
+    border-bottom: 1px solid white;
+} 
+
+.nav-prod ul li:not(:last-child) a {
+    position: relative; /* Define a posição relativa para os links */
+}
+
+.nav-prod ul li:not(:last-child) a::after { 
+    /* selecionando todos os elementos <li> que não são o último filho de seu contêiner <ul> */
+    /* adicionar conteúdo depois do conteúdo de um elemento */
+    /* seleciona os elementos de <a> que não são o último item do menu e adiciona "|" DEPOIS de cada um deles, criando a separação */
+    content: "|";
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    position: absolute; /* Define a posição absoluta para as barras verticais */
+    top: 50%;           /* Alinha as barras verticalmente ao meio */
+    transform: translateY(-50%); 
+}
+
+footer{
+    background-color: #013C31;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-top: 11px solid #285249;
+    padding: 10px;
+    color: #FF730B;
+}
+
+.footer-alinha{
+    margin: auto;
+}
+
+th, td {
+    font-weight: normal; /* Define o peso da fonte como normal para remover o negrito */
+}
+
+#iconeemail{
+    width: 7%;
+}
+
+#atendimento{
+    font-size: 22px;
+    text-align: center;
+}
+
+#contato{
+    display: inline;
+    text-align: center;
+}
+
+#info-ctt{
+    font-size: 13px;
+    text-align: center;
+}
+
+#iconeface{
+    width: 5%;
+}
+
+#copyright{
+    padding-top: 33px;
+    text-align: center;
+}
+#copyright2{
+    text-align: center;
+}
+
+.pag-principal{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#frutas{
+    background-color: #285249; /* Cor de fundo */
+    border: none; /* Sem borda */
+    color: #fffbe4; /* Cor do texto */
+    padding: 15px 25px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em linha */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 20px; /* Margem */
+    cursor: pointer; /* Cursor do mouse */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: 0.3s; /* Transição para efeito de aumento */
+    margin-top: 28px;
+}
+
+#frutas:hover{
+    transform: scale(1.1); /* Aumento de escala */
+}
+
+#frutas2{
+    background-color: #285249; /* Cor de fundo */
+    border: none; /* Sem borda */
+    color: #fffbe4; /* Cor do texto */
+    padding: 15px 25px; /* Espaçamento interno */
+    text-align: center; /* Alinhamento do texto */
+    text-decoration: none; /* Sem decoração de texto */
+    display: inline-block; /* Exibição em linha */
+    font-size: 16px; /* Tamanho da fonte */
+    margin: 4px 20px; /* Margem */
+    cursor: pointer; /* Cursor do mouse */
+    border-radius: 8px; /* Bordas arredondadas */
+    transition: 0.3s; /* Transição para efeito de aumento */
+    margin-top: 28px;
+    margin-left: 20%;
+}
+
+#frutas2:hover{
+    transform: scale(1.1); /* Aumento de escala */
+}
+
+#botoes-prod{
+    text-align: center;
+}
+
+dialog{
+    background-color:#285249;
+    border-radius: 10px;
+    border-width: 1px;
+    color: aliceblue;
+}
+
+#fechar:hover{
+    color:white;
+    background-color: #FF730B;
+    cursor: pointer
+}
+
+#fechar{
+    color:rgb(0, 0, 0); 
+    background-color: white;
+    justify-items: flex-end;
+}
+
+#cadastrar{
+    color:rgb(0, 0, 0); 
+    background-color: white;
+    justify-items: flex-end;
+}
+
+#cadastrar:hover{
+    color:white;
+    background-color: #FF730B;
+    cursor: pointer
+}
+
+#proposta{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#texto-principal{
+    width: 50%;
+    float: left;
+    flex: 1; /* Ocupa o restante do espaço disponível */
+}
+
+#imagem-principal{
+    float: right;
+    width: 50%; /* Ajuste conforme necessário */
+    margin: auto;
+    text-align: center;
+}
+
+#imagem-principal img{
+    border: 1px solid black;
+    border-radius: 10px; /* Define o raio da borda */
+    width: 50%;
+    margin-top: 30px;
+}
+
+.pag-principal{
+    display: flex;
+    flex-direction: row;
+    margin-top: 25px;
+    padding: 30px;
+}
+
+#proposta2{
+    font-size: 30px;
+    font-weight: bolder;
+}
+
+#texto-2{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    width: 50%;
+    float: right;
+    text-align: right; /* Alinhamento à direita */
+}
+
+#outra-imagem{
+    float: left;
+    width: 50%; /* Ajuste conforme necessário */
+    margin: auto;
+    text-align: center;
+}
+
+#outra-imagem img{
+    width: 50%;
+    margin-top: 30px;
+}
+
+#alinhar-form{
+    display: inline;
+}
+
+#reclamações{
+    text-decoration: none;
+    color: #FF730B;
+}
+
+#reclamações:hover{
+    text-decoration:underline;
+}
+
+.produtos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 20px;
+}
+
+.produto {
+    width: 20%; /* 5 produtos por linha */
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center;
+    margin: 15px;
+}
+
+.produto  {
+    font-weight: bold;
+    font-size: 0.8em; /* Tamanho de letra menor */
+}
+
+.kg{
+    font-size: 13px;
+}
+
+.preço{
+    font-size: 20px ;
+}
+
+.ft_prod{
+    width: 75%;
+    border-radius: 9px;
+}
+
+#carrinho{
+    background-color: #285249;
+    border-radius: 10px;
+    border-width: 1px;
+    color: aliceblue;
+}
+
+#cartItems li{
+    list-style: none;
+    margin-bottom: 10px;
+}
+
+#cartItems li span{  /* estiliza o numero total */
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+#add-cart{
+    color:rgb(0, 0, 0); 
+    background-color: white;
+    justify-items: flex-end;
+    width: 70%;
+    padding: 3%;
+    margin-top: 20px;
+}
+
+#add-cart:hover{
+    color:white;
+    background-color: #FF730B;
+    cursor: pointer
+}
+
+#finalizar-compra{
+    color:rgb(0, 0, 0); 
+    background-color: white;
+    justify-items: flex-end;
+}
+
+#finalizar-compra:hover{
+    color:white;
+    background-color: #FF730B;
+    cursor: pointer
+}
+
+#finalizando{
+    padding-left: 15px;
+}
+
+#obrigada{
+    font-size: 30px; 
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    margin: 100px;
+}
+
+#fim{
+    text-align: center;
+}
+
+#frete{
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* .rating > label {
+    margin-right: 4px;
+}
+  
+.rating:not(:checked) > input {
+    display: none;
+}
+  
+.rating:not(:checked) > label {
+    float: right;
+    cursor: pointer;
+    font-size: 30px;
+}
+  
+.rating:not(:checked) > label > svg {
+    fill: #666;
+    transition: fill 0.3s ease;
+}
+  
+.rating > input:checked ~ label > svg {
+    fill: #ffa723;
+}
+  
+.rating:not(:checked) > label:hover ~ label > svg,
+.rating:not(:checked) > label:hover > svg {
+    fill: #ff9e0b;
+}
+  
+#star1:hover ~ label > svg,
+#star1:hover > svg {
+    fill: #a23c3c !important;
+}
+  
+#star2:hover ~ label > svg,
+#star2:hover > svg {
+    fill: #99542d !important;
+}
+  
+#star3:hover ~ label > svg,
+#star3:hover > svg {
+    fill: #9f7e18 !important;
+}
+
+#star4:hover ~ label > svg,
+#star4:hover > svg {
+    fill: #22885e !important;
+}
+  
+#star5:hover ~ label > svg,
+#star5:hover > svg {
+    fill: #7951ac !important;
+}
+  
+#star1:checked ~ label > svg {
+    fill: #ef4444;
+}
+  
+#star2:checked ~ label > svg {
+    fill: #e06c2b;
+}
+  
+#star3:checked ~ label > svg {
+    fill: #eab308;
+}
+  
+#star4:checked ~ label > svg {
+    fill: #19c37d;
+}
+  
+#star5:checked ~ label > svg {
+    fill: #ab68ff;
+}
+
+.rating{
+    margin-bottom: 10px;
+    margin-right: 45px;
+}  
+
+#sug-star1:hover ~ label > svg,
+#sug-star1:hover > svg {
+    fill: #a23c3c !important;
+}
+  
+#sug-star2:hover ~ label > svg,
+#sug-star2:hover > svg {
+    fill: #99542d !important;
+}
+  
+#sug-star3:hover ~ label > svg,
+#sug-star3:hover > svg {
+    fill: #9f7e18 !important;
+}
+
+#sug-star4:hover ~ label > svg,
+#sug-star4:hover > svg {
+    fill: #22885e !important;
+}
+  
+#sug-star5:hover ~ label > svg,
+#sug-star5:hover > svg {
+    fill: #7951ac !important;
+}
+  
+#sug-star1:checked ~ label > svg {
+    fill: #ef4444;
+}
+  
+#sug-star2:checked ~ label > svg {
+    fill: #e06c2b;
+}
+  
+#sug-star3:checked ~ label > svg {
+    fill: #eab308;
+}
+  
+#sug-star4:checked ~ label > svg {
+    fill: #19c37d;
+}
+  
+#sug-star5:checked ~ label > svg {
+    fill: #ab68ff;
+} */

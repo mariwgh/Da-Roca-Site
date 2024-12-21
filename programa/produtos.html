@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frutas DaRoça</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+
+<body>
+    <header>
+        <div id="header">
+            <a href="DaRoça.html"><img src="Z:\1° ano\PraProf\1sem\PROJETOS PP\DaRoça\VERSÕES\TERCEIRA ENTREGA\com js externo\imagens\daroca logo.png" alt="DaRoça" id="logo"></a>
+
+            <div class="search-container">
+                <form action="/pesquisar" method="get" id="pesquisar-form">
+                    <input type="text" name="query" placeholder="Pesquise por produto" id="pesquisar-input-text">
+                    <input type="submit" value="Buscar" id="pesquisar-input-submit">
+                </form>
+            </div>
+        </div>
+
+        <div class="nav-prod">
+            <nav>
+                <ul>
+                    <li><a href="quem-somos.html">Quem Somos</a></li>             
+                    <li onclick="abrir()"><a href="#">Entre</a></li>
+                    <li onclick="cadastro()"><a href="#">Cadastre-se</a></li>  
+                    <li onclick="mostrarCarrinho()"><a href="#">Minha Cesta</a></li> <!--tem que arrumar esse 'minha festa'-->
+                </ul>
+            </nav>
+        </div>
+  
+        <div id="login-mari">
+            <dialog class="login">
+                <button onclick="fechar()" id="fechar" >X</button> <br><br>
+                <form action="" method="post" id="alinhar-form">
+                    <label for="usuario">Usuário:</label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <p>
+                    <label for="senha">Senha:</label>
+                    <input type="password" id="senha" name="senha" style="width: 180px;" required>
+                    <input type="checkbox" onclick="mostrarSenha()">Mostrar senha
+                    </p>
+                    <input type="submit" value="Entrar" id="cadastrar">
+                    <input type="reset" value="Limpar" id="cadastrar">
+                </form>
+            </dialog>
+  
+            <dialog class="cad"> 
+                <button onclick="fechaCad()" id="fechar">X</button>    <br><br>
+                <form method="post" id="alinhar-form">
+                    <label for="user">Usuário: </label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    <p>
+                    <label for="user">Nome completo: </label>
+                    <input type="text" id="nome" name="nome" required>
+                    </p><p>
+                    <label for="user">Senha: </label>
+                    <input type="text" id="usuario" name="usuario" required>
+                    </p><p>
+                    <label for="user">Data de nascimento: </label>
+                    <input type="date" id="usuario" name="data" required>
+                    </p>
+                    <label for="user">E-mail: </label>
+                    <input type="email" id="email" name="email" required>
+                    <p>
+                    <label for="user">Com qual frequência quer receber os produtos?</label>
+                    </p>
+                    <input type="radio" id="opc1" name="frequência" value="semanal" required>
+                    <label for="opc1">Semanal</label>
+                    <input type="radio" id="opc2" name="frequência" value="quinzenal" required>
+                    <label for="opc2">Quinzenal</label>
+                    <input type="radio" id="opc3" name="frequência" value="mensal" required>
+                    <label for="opc3">Mensal</label>
+                    <p>
+                        <input type="submit" value="Cadastrar" id="cadastrar">
+                    </p>
+                </form>
+            </dialog>
+  
+            <dialog id="carrinho">
+                <button onclick='fechaCarrinho()' id="fechar">X</button>
+                <p></p>
+                <div class="cart">
+                    <h2>Minha Cesta</h2>
+                    <ul id="cartItems">
+                        <!-- Itens do carrinho serão adicionados aqui dinamicamente -->
+                    </ul>
+                    <p>Total: R$ <span id="cartTotal">0.00</span></p>
+                    <button onclick="limparCarrinho()" id="cadastrar">Limpar Cesta</button>
+                    <a href="finalizar-compra.html"><button id="cadastrar">Finalizar compra</button></a>
+                </div>
+            </dialog>
+  
+        </div>
+    </header>
+    
+    <main>
+
+        <button onclick="buscaProdutos(1)" id="frutas2">Frutas</button>
+        <button onclick="buscaProdutos(3)" id="frutas2">Verduras</button>
+        <button onclick="buscaProdutos(2)" id="frutas2">Legumes</button>
+
+        <div class="produtos" id="listaProdutos">
+            <!-- id="pf"  -->
+        </div>
+    
+        <script src="principal.js"></script>
+        <!-- <script src="frutas.js"></script> -->
+        <script>
+            function buscaProdutos(categoria) {
+                fetch('http://localhost:3000/produtos')
+                .then(resposta =>{
+                    return resposta.json();
+                })
+                .then((dados) => {
+                    console.log(dados)
+                    exibirProdutos(dados, categoria)
+                })
+            }
+    
+            function exibirProdutos(lista, categoria) {
+                const listaProdutos = document.querySelector("#listaProdutos");
+                listaProdutos.innerHTML = '';
+    
+                lista.forEach(produto => {
+                    if (produto.categoria === categoria) { // Verifica se a categoria do produto é 1
+                        const divProduto = document.createElement('div');
+                        divProduto.classList.add('produto');
+        
+                        const nomeProduto = document.createElement('p');
+                        nomeProduto.textContent = produto.nome;
+                        divProduto.appendChild(nomeProduto);
+        
+                        const imgProduto = document.createElement("img");
+                        imgProduto.src = produto.imagem;
+                        imgProduto.classList.add('ft_prod'); // Adiciona a classe para formatar
+                        divProduto.appendChild(imgProduto);
+        
+                        const valorProduto = document.createElement('div');
+                        valorProduto.textContent = 'R$ ' + produto.valor + ',00';
+                        valorProduto.classList.add("preco")
+                        divProduto.appendChild(valorProduto);
+        
+                        const buttonProduto = document.createElement('button');
+                        buttonProduto.textContent = 'Adicionar ao Carrinho';
+                        buttonProduto.setAttribute('id', 'add-cart');   // Adiciona o ID para formatar
+                        buttonProduto.onclick = function() {
+                            addToCart(produto.nome, produto.valor);
+                        };
+                        divProduto.appendChild(buttonProduto);
+        
+                        listaProdutos.appendChild(divProduto);
+                    }})
+                }
+        </script>
+    
+    </main>
+    
+    
+    <footer>   
+
+        <table class="footer-alinha">
+            <tr>
+                <th>
+                    <div id="div-atendimento">
+                        <p id="atendimento">Atendimento</p>
+                        <img id="iconeemail" src="Z:\1° ano\PraProf\1sem\PROJETOS PP\DaRoça\VERSÕES\TERCEIRA ENTREGA\com js externo\imagens\icone email.png" alt="email">
+                        <p id="contato">Contato</p>
+                        <p id="info-ctt">Grupo Fartura de Hortifruti S.A. </p>
+                        <p id="info-ctt">CNPJ: 04.973.092/0003-22 </p>
+                        <p id="info-ctt">R. Culto à Ciência - Campinas, SP</p>
+                        <p id="info-ctt">CEP: 13020-060</p>
+                        <p id="info-ctt"><a href="reclamações.html" id="reclamações">Clique aqui para comentários, <br> reclamações e sugestões.</a></p>
+                    </div>
+                </th>
+
+                <th>
+                    <div id="redes-sociais">
+                        <p id="atendimento">Redes Sociais</p>
+                        <p id="info-ctt">Nos siga nas redes sociais para</p>
+                        <p id="info-ctt">não perder promoções!</p>
+                        <img id="iconeemail" src="Z:\1° ano\PraProf\1sem\PROJETOS PP\DaRoça\VERSÕES\TERCEIRA ENTREGA\com js externo\imagens\icone-insta.png" alt="email">
+                        <p id="contato">Instagram</p>
+                        <br>
+                        <img id="iconeface" src="Z:\1° ano\PraProf\1sem\PROJETOS PP\DaRoça\VERSÕES\TERCEIRA ENTREGA\com js externo\imagens\icone face.png" alt="email">
+                        <p id="contato">Facebook</p>
+                    </div>
+                </th>
+            </tr>
+        </table> 
+
+        <p id="copyright">DaRoça © - 2024</p>
+        <p id="copyright2">Todos os direitos reservados.</p>
+    
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DaRoça</title>
+
+    <style>
+
+      body{
+        background-color: #fffbe4;
+      }
+
+      main{
+        margin-bottom: 33px;
+      }
+
+      #logo{
+        width: 150px;
+      }
+    
+      .search-container {
+        display: flex; /* Torna o contêiner flexível */
+        align-items: baseline; /* Alinha os itens verticalmente */
+        margin-left: 11px;
+      }
+
+      nav ul{
+        list-style: none;
+      }
+
+      nav ul li{
+        display: inline;
+      }
+
+      nav ul li a {
+        color: #FF730B;
+        padding: 15px;
+        text-decoration: none;
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-size: 14px;
+      }
+
+      header{
+        display: flex;
+        background-color: #013C31;
+        width: auto;
+        height: 60px;
+        padding: 0 22px;
+        justify-content: space-between;
+        align-items: center; 
+      }
+
+      form {
+        align-items: center; /* Alinha os itens verticalmente */
+        margin-left: auto; /* Move a caixa de pesquisa e o botão para a direita */
+        display: flex;
+      }
+
+      input[type="text"], input[type="submit"] {
+        padding: 5px;
+        font-size: 12px;
+        background-color: #83aaa3;
+        color: white;
+        border: none;
+        border-radius: 0; 
+      }
+
+      input[type="text"] {
+        border-top-left-radius: 5px; /* Adiciona arredondamento apenas no canto superior esquerdo */
+        border-bottom-left-radius: 5px;
+      }
+
+      input[type="submit"] {
+        border-top-right-radius: 5px; /* Adiciona arredondamento apenas no canto superior direito */
+        border-bottom-right-radius: 5px;
+        cursor: pointer;
+      }
+
+      input[type="submit"]:hover {
+        background-color: #FF730B;
+      }
+
+      .nav-prod{
+        background-color: #285249;
+        text-align: center;
+        padding: 1px;
+        position: relative;
+      }
+
+      .nav-prod ul li a:hover{
+        border-bottom: 1px solid white;
+      } 
+
+      .nav-prod ul li:not(:last-child) a {
+        position: relative; /* Define a posição relativa para os links */
+      }
+
+      .nav-prod ul li:not(:last-child) a::after { 
+        /* selecionando todos os elementos <li> que não são o último filho de seu contêiner <ul> */
+        /* adicionar conteúdo depois do conteúdo de um elemento */
+        /* seleciona os elementos de <a> que não são o último item do menu e adiciona "|" DEPOIS de cada um deles, criando a separação */
+        content: "|";
+        color: white;
+        padding-left: 10px;
+        padding-right: 10px;
+        position: absolute; /* Define a posição absoluta para as barras verticais */
+        top: 50%;           /* Alinha as barras verticalmente ao meio */
+        transform: translateY(-50%); 
+      }
+
+      footer{
+        background-color: #013C31;
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        border-top: 11px solid #285249;
+        padding: 10px;
+        color: #FF730B;
+      }
+
+      #iconeemail{
+        width: 9%;
+      }
+
+      #atendimento{
+        font-size: 22px;
+      }
+
+      #contato{
+        display: inline;
+      }
+
+      #info-ctt{
+        font-size: 13px;
+      }
+
+      #iconeface{
+        width: 8%;
+      }
+
+      #copyright{
+        padding-top: 33px;
+        text-align: center;
+      }
+      #copyright2{
+        text-align: center;
+      }
+
+      .pag-principal{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+
+      #frutas{
+        background-color: #4CAF50; /* Cor de fundo */
+        border: none; /* Sem borda */
+        color: white; /* Cor do texto */
+        padding: 15px 25px; /* Espaçamento interno */
+        text-align: center; /* Alinhamento do texto */
+        text-decoration: none; /* Sem decoração de texto */
+        display: inline-block; /* Exibição em linha */
+        font-size: 16px; /* Tamanho da fonte */
+        margin: 4px 20px; /* Margem */
+        cursor: pointer; /* Cursor do mouse */
+        border-radius: 8px; /* Bordas arredondadas */
+        transition: 0.3s; /* Transição para efeito de aumento */
+        margin-top: 28px;
+      }
+
+      #frutas:hover{
+        transform: scale(1.1); /* Aumento de escala */
+      }
+
+      #botoes-prod{
+        text-align: center;
+      }
+
+      dialog{
+        background-color: rgb(65,135,63);
+        border-radius: 10px;
+        /* border-style: dashed; */
+        border-width: 1px;
+        color: aliceblue;
+        /* cursor: move; */
+      }
+
+
+      #fechar:hover{
+        color:white;
+        background-color: red;
+        cursor: pointer
+      }
+      
+      #fechar{
+        color:red; 
+        background-color: white;
+        justify-items: flex-end;
+      }
+
+      #proposta{
+        font-size: 30px;
+        font-weight: bolder;
+      }
+
+      #texto-principal{
+        width: 50%;
+        float: left;
+        flex: 1; /* Ocupa o restante do espaço disponível */
+      }
+
+      #imagem-principal{
+        float: right;
+        width: 50%; /* Ajuste conforme necessário */
+        margin: auto;
+        text-align: center;
+      }
+
+      #imagem-principal img{
+        border: 1px solid black;
+        border-radius: 10px; /* Define o raio da borda */
+        width: 80%;
+        margin-top: 30px;
+      }
+
+      .pag-principal{
+        display: flex;
+        flex-direction: row;
+        margin-top: 25px;
+      }
+
+      #proposta2{
+        font-size: 30px;
+        font-weight: bolder;
+      }
+        
+      #texto-2{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+      }
+
+      #login-mari{
+        background-color: #013C31;
+      }
+
+      #alinhar-form{
+        display: inline;
+      }
+      input{
+        border-radius: 9px;
+      }
+
+    </style>
+
+</head>
+
+<body>
+    
+    <header>
+        <img src="daroca logo.png" alt="DaRoça" id="logo">
+
+        <div class="search-container">
+          <form action="/pesquisar" method="get">
+            <input type="text" name="query" placeholder="Pesquise por produto">
+            <input type="submit" value="Buscar">
+          </form>
+        </div>
+
+    </header>
+
+
+    <main> 
+
+      <div class="nav-prod">
+        <nav>
+          <ul>
+            <li><a href="quem-somos.html">Quem Somos</a></li>             
+            <li onclick="abrir()"><a href="#">Entre</a></li>
+            <li onclick="cadastro()"><a href="#">Cadastre-se</a></li>  
+            <li><a href="minha-cesta.html">Minha Cesta</a></li>  
+          </ul>
+        </nav>
+      </div>
+
+
+      <div id="login-mari">
+
+        <dialog class="banana">
+            <p onclick="fechar()"><button id="fechar">X</button></p>
+            <form action="" method="post" id="alinhar-form">
+                <label for="usuario">Usuário:</label>
+                <input type="text" id="usuario" name="usuario">
+                <p>
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" style="width: 180px;">
+                <input type="checkbox" onclick="mostrarSenha()">Mostrar senha
+                </p>
+                <input type="submit" value="Entrar">
+                <input type="reset" value="Limpar tudo">
+            </form>
+        </dialog>
+
+        <dialog class="cad"> 
+            <p onclick="fechaCad()"><button id="fechar">X</button></p>       
+            <form method="post" id="alinhar-form">
+                <label for="user">Crie um usuário</label>
+                <input type="text" id="usuario" name="usuario">
+                <p>
+                <label for="user">Digite seu nome completo</label>
+                <input type="text" id="nome" name="nome">
+                </p><p>
+                <label for="user">Digite uma senha</label>
+                <input type="text" id="usuario" name="usuario">
+                </p><p>
+                <label for="user">Data de nascimento</label>
+                <input type="date" id="usuario" name="data">
+                </p>
+                <label for="user">Digite seu email</label>
+                <input type="email" id="email" name="email">
+                <p>
+                <label for="user">Com qual frequência quer receber os produtos?</label>
+                </p>
+                <input type="radio" id="opc1" name="frequência" value="semanal">
+                <label for="opc1">Semanal</label>
+                <input type="radio" id="opc2" name="frequência" value="quinzenal">
+                <label for="opc2">Quinzenal</label>
+                <input type="radio" id="opc3" name="frequência" value="mensal">
+                <label for="opc3">Mensal</label>
+                <p>
+                    <input type="submit" value="Cadastrar">
+                </p>
+                
+            </form>
+        </dialog>
+
+      </div>
+
+
+      <div class="pag-principal">
+
+        <div id="texto-principal">
+          <p id="proposta">Entregamos produtos frescos na sua casa!</p>
+          <p>Faça seu cadastro, escolhendo a frequência que quer receber os <br>produtos e o melhor dia para receber seus produtos!</p>
+          <p>Escolha os produtos:</p>
+
+          <div id="botoes-prod">
+            <a onclick="abrirProdutos()" id="frutas">Frutas</a>
+            <a onclick="abrirProdutos()" id="frutas">Verduras</a>
+            <a onclick="abrirProdutos()" id="frutas">Legumes</a>
+          </div>
+
+        </div>
+
+        <div id="imagem-principal">
+          <img src="img principal.png">
+        </div>
+
+      </div>
+
+
+      <div id="texto-2">
+        <p id="proposta2">Logística</p>
+        <p>As cestas chegam sempre das 8h às 19h de terça a sexta-feira.</p>
+        <p>Navegue pela categoria de produtos, escolha os produtos que deseja receber, adicionando-os na sua cesta.</p>
+        <p>Os produtos são separados e encaixotados durante a madrugada em um dos nossos centros de distribuição com o cuidado e atenção que os nossos clientes merecem para serem entregues no dia seguinte.</p>
+        <P>As caixas para entrega são térmicas e foram desenvolvidas pela Klabin para a DaRoça.</P>
+        <p>O transporte é feito em veículos pequenos e climatizados, que ficam no máximo seis horas com os produtos, para que as cestas cheguem em perfeitas condições.</p>
+        <p>No dia da entrega, enviamos uma mensagem para o cliente confirmando o horário de chegada da cesta em sua casa.</p>
+      </div>
+
+
+    </main>
+
+
+    <script>
+
+      const testemodal = document.querySelector('.banana')
+      const cads = document.querySelector('.cad')
+
+      function abrir(){
+          testemodal.showModal()
+      }
+      function fechar(){
+          testemodal.close()
+      }
+      function mostrarSenha(){
+          x =  document.querySelector('#senha')
+          if (x.type == 'password'){
+              x.type = 'text' 
+          } else{
+              x.type = 'password'
+          }
+      }
+      function cadastro(){
+          cads.showModal()
+      }
+      function fechaCad(){
+          cads.close()
+      }
+
+      function abrirProdutos(){
+        window.open('frutas-produtos.html')
+      }
+
+    </script>
+
+
+    <footer>   
+
+      <table>
+        <tr>
+
+          <th>
+            <div id="div-atendimento">
+              <p id="atendimento">Atendimento</p>
+              <img id="iconeemail" src="icone email.png" alt="email">
+              <p id="contato">Contato</p>
+              <p id="info-ctt">Grupo Fartura de Hortifruti S.A. </p>
+              <p id="info-ctt">CNPJ: 04.973.092/0003-22 </p>
+              <p id="info-ctt">R. Culto à Ciência - Campinas, SP</p>
+              <p id="info-ctt">CEP: 13020-060</p>
+            </div>
+          </th>
+
+          <th>
+            <div id="redes-sociais">
+              <p id="atendimento">Redes Sociais</p>
+              <p id="info-ctt">Nos siga nas redes sociais para</p>
+              <p id="info-ctt">não perder promoções!</p>
+              <img id="iconeemail" src="icone-insta.png" alt="email">
+              <p id="contato">Instagram</p>
+              <br>
+              <img id="iconeface" src="icone face.png" alt="email">
+              <p id="contato">Facebook</p>
+            </div>
+          </th>
+        </tr>
+      </table> 
+
+      <p id="copyright">DaRoça © - 2024</p>
+      <p id="copyright2">Todos os direitos reservados.</p>
+    
+    </footer>
+
+</body>
+
+</html>

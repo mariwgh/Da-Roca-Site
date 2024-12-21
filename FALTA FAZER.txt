@@ -1,0 +1,13 @@
+FALTA FAZER P ENTREGA 27.05:
+
+-forma de pagamento --> MARI LINDA
+-list-style: none (carrinho) --> RAFAELLY
+
+-ajustar imagens prod
+
+-pedido de compra de acordo com frequencia e frete!
+
+-ENTENDER CODIGO E SABER EXPLICAR!!
+
+BANCO DE DADOS:
+-pesquisar

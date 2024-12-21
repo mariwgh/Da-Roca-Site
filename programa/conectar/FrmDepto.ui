@@ -1,0 +1,688 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FrmDepto</class>
+ <widget class="QMainWindow" name="FrmDepto">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>636</width>
+    <height>475</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Da Roça</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QTabWidget" name="abas">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>791</width>
+      <height>391</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>11</pointsize>
+     </font>
+    </property>
+    <property name="styleSheet">
+     <string notr="true"/>
+    </property>
+    <property name="currentIndex">
+     <number>3</number>
+    </property>
+    <widget class="QWidget" name="tabIncluir">
+     <attribute name="icon">
+      <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+       <normaloff>:/depto/COPY.BMP</normaloff>:/depto/COPY.BMP</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>Incluir</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Manutenção de Dados de Departamento</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>491</width>
+        <height>225</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridLayout">
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="boxNome">
+         <property name="maxLength">
+          <number>11</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QSpinBox" name="boxCat">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelCat">
+         <property name="text">
+          <string>Categoria do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelNome">
+         <property name="text">
+          <string>Nome do novo produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelImg">
+         <property name="text">
+          <string>Imagem do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelPreco">
+         <property name="text">
+          <string>Preço (r.rr): </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLineEdit" name="boxImg">
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QLineEdit" name="boxDesc">
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelDesc">
+         <property name="text">
+          <string>Descrição do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QSpinBox" name="boxPreco">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonIncluir">
+      <property name="geometry">
+       <rect>
+        <x>420</x>
+        <y>250</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Incluir</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabAlterar">
+     <attribute name="title">
+      <string>Alterar</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>601</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridPesquisar">
+       <item row="0" column="2">
+        <widget class="QSpinBox" name="boxID">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelID">
+         <property name="text">
+          <string>ID do produto: </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTableWidget" name="gridDepto_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>601</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Imagem</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Preço</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Descrição</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Categoria</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_7">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>120</y>
+        <width>601</width>
+        <height>225</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridMostra">
+       <item row="2" column="2">
+        <widget class="QLineEdit" name="boxImg_2">
+         <property name="maxLength">
+          <number>11</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="labelNome_2">
+         <property name="text">
+          <string>Novo nome do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="labelImg_2">
+         <property name="text">
+          <string>Nova imagem do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="labelPreco_2">
+         <property name="text">
+          <string>Novo valor do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="labelDesc_2">
+         <property name="text">
+          <string>Nova descrição do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QLabel" name="labelCat_2">
+         <property name="text">
+          <string>Nova categoria do produto: </string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLineEdit" name="boxNome_2">
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="2">
+        <widget class="QLineEdit" name="boxDesc_2">
+         <property name="maxLength">
+          <number>20</number>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="2">
+        <widget class="QSpinBox" name="boxPreco_2">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="2">
+        <widget class="QSpinBox" name="boxCat_2">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonAlterar">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>360</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Alterar</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabExcluir">
+     <attribute name="title">
+      <string>Excluir</string>
+     </attribute>
+     <widget class="QWidget" name="layoutWidget_12">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>10</y>
+        <width>601</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridPesquisa">
+       <item row="0" column="2">
+        <widget class="QSpinBox" name="boxID_2">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelID_2">
+         <property name="text">
+          <string>ID do produto: </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QTableWidget" name="gridMostra_2">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>50</y>
+        <width>601</width>
+        <height>71</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Imagem</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Preço</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Descrição</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Categoria</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QPushButton" name="pushButtonExcluir">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>130</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Excluir</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QWidget" name="tabListar">
+     <attribute name="icon">
+      <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+       <normaloff>:/depto/WINPREV.BMP</normaloff>:/depto/WINPREV.BMP</iconset>
+     </attribute>
+     <attribute name="title">
+      <string>Listar</string>
+     </attribute>
+     <attribute name="toolTip">
+      <string>Exibe lista de departamentos cadastrados</string>
+     </attribute>
+     <widget class="QTableWidget" name="gridLista">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>40</y>
+        <width>601</width>
+        <height>261</height>
+       </rect>
+      </property>
+      <column>
+       <property name="text">
+        <string>ID</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Nome</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Imagem</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Preço</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Descrição</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Categoria</string>
+       </property>
+      </column>
+     </widget>
+     <widget class="QWidget" name="layoutWidget_13">
+      <property name="geometry">
+       <rect>
+        <x>0</x>
+        <y>0</y>
+        <width>601</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <layout class="QGridLayout" name="gridPesquisa_2">
+       <item row="0" column="2">
+        <widget class="QSpinBox" name="boxCat_3">
+         <property name="minimum">
+          <number>1</number>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLabel" name="labelCat_3">
+         <property name="text">
+          <string>Categoria do produto: </string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+     <widget class="QPushButton" name="pushButtonLista">
+      <property name="geometry">
+       <rect>
+        <x>530</x>
+        <y>320</y>
+        <width>75</width>
+        <height>23</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Listar</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>636</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuSobre">
+    <property name="title">
+     <string>Sobre</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="menuSair">
+    <property name="title">
+     <string>Sair</string>
+    </property>
+   </widget>
+   <addaction name="menuSobre"/>
+   <addaction name="menuSair"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonTextUnderIcon</enum>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="action_Inicio"/>
+   <addaction name="action_Anterior"/>
+   <addaction name="action_Proximo"/>
+   <addaction name="action_Fim"/>
+   <addaction name="separator"/>
+   <addaction name="action_Buscar"/>
+   <addaction name="action_Novo"/>
+   <addaction name="separator"/>
+   <addaction name="action_Editar"/>
+   <addaction name="action_Salvar"/>
+   <addaction name="action_Cancelar"/>
+   <addaction name="action_Excluir"/>
+   <addaction name="separator"/>
+   <addaction name="action_Sair"/>
+  </widget>
+  <action name="actionConex_o">
+   <property name="text">
+    <string>Conexão</string>
+   </property>
+  </action>
+  <action name="actionSair">
+   <property name="text">
+    <string>Sair</string>
+   </property>
+  </action>
+  <action name="action_Novo">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/Add.bmp</normaloff>:/depto/Add.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Novo</string>
+   </property>
+   <property name="toolTip">
+    <string>Incluir novo registro</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="action_Editar">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/WINNEXT.BMP</normaloff>:/depto/WINNEXT.BMP</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Editar</string>
+   </property>
+   <property name="toolTip">
+    <string>Altera dados do registro em exibição</string>
+   </property>
+  </action>
+  <action name="action_Salvar">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/Save.bmp</normaloff>:/depto/Save.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Salvar</string>
+   </property>
+   <property name="toolTip">
+    <string>Grava o registro atual no banco de dados</string>
+   </property>
+  </action>
+  <action name="action_Excluir">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/Minus.bmp</normaloff>:/depto/Minus.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>E&amp;xcluir</string>
+   </property>
+   <property name="toolTip">
+    <string>Exclui o registro cujo código foi digitado</string>
+   </property>
+  </action>
+  <action name="action_Cancelar">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/UNDO.BMP</normaloff>:/depto/UNDO.BMP</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Cancelar</string>
+   </property>
+   <property name="toolTip">
+    <string>Cancela a operação atualmente em execução</string>
+   </property>
+  </action>
+  <action name="action_Buscar">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/Oeil2.bmp</normaloff>:/depto/Oeil2.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Buscar</string>
+   </property>
+   <property name="toolTip">
+    <string>Busca o registro cujo código foi digitado e o exibe</string>
+   </property>
+  </action>
+  <action name="action_Inicio">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/first.bmp</normaloff>:/depto/first.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Início</string>
+   </property>
+   <property name="toolTip">
+    <string>Posiciona visualização no primeiro registro e o exibe</string>
+   </property>
+  </action>
+  <action name="action_Anterior">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/prior.bmp</normaloff>:/depto/prior.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Anterior</string>
+   </property>
+   <property name="toolTip">
+    <string>Posiciona visualização no registro anterior ao atualmente exibido</string>
+   </property>
+  </action>
+  <action name="action_Proximo">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/next.bmp</normaloff>:/depto/next.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Próximo</string>
+   </property>
+   <property name="toolTip">
+    <string>Posiciona visualização no registro seguinte ao atual</string>
+   </property>
+  </action>
+  <action name="action_Fim">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/last.bmp</normaloff>:/depto/last.bmp</iconset>
+   </property>
+   <property name="text">
+    <string>&amp;Fim</string>
+   </property>
+   <property name="toolTip">
+    <string>Posiciona visualização no último registro e o exibe</string>
+   </property>
+  </action>
+  <action name="action_Sair">
+   <property name="icon">
+    <iconset resource="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc">
+     <normaloff>:/depto/CLOSE1.BMP</normaloff>:/depto/CLOSE1.BMP</iconset>
+   </property>
+   <property name="text">
+    <string>Sai&amp;r</string>
+   </property>
+   <property name="toolTip">
+    <string>Fecha a conexão, salva dados e fecha o formulário</string>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="P:/19-Informática/2024/1oAno/TI121-Técnicas de Programação/2 Exemplos/cap12/sistemaRH/recursos.qrc"/>
+ </resources>
+ <connections/>
+</ui>

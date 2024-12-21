@@ -1,0 +1,91 @@
+.nav-prod ul li a:hover{
+    border-bottom: 1px solid white;
+} 
+
+#frutashover:hover + .overlay-frutas{
+    display: block;   /* Exibe o elemento de sobreposição quando o mouse está sobre o item do menu */
+}
+
+.overlay-frutas ul{
+    list-style-type:none;
+}
+
+
+<div class="overlay-frutas">
+    <ul>
+      <li>Maçã</li>
+      <li>Laranja</li>
+      <li>Tomate</li>
+    </ul>
+  </div>
+  
+  <div class="overlay-verduras">
+    <ul>
+      <li>Alface</li>
+      <li>Abóbora</li>
+      <li>Pepino</li>
+    </ul>
+  </div>
+  
+  <div class="overlay-legumes">
+    <ul>
+      <li>Cenoura</li>
+      <li>Beringela</li>
+      <li>Batata</li>
+    </ul>
+  </div>
+
+  .overlay-frutas {
+    position: absolute; /* Define a posição absoluta para que o elemento possa ser posicionado exatamente em relação ao item do menu */
+    width: auto;       /* Define a largura do elemento de sobreposição */
+    background-color: #7ca79f; /* Define a cor de fundo do elemento de sobreposição */
+    border: 1px solid #000; /* Adiciona uma borda ao elemento de sobreposição */
+    padding: 5px;     
+    display: none;            /* Oculta o elemento normalmente */
+    left: 35%;
+    padding-right: 25px;
+  }
+
+  .overlay-verduras{
+    position: absolute; 
+    width: auto;       
+    background-color: #7ca79f; 
+    border: 1px solid #000; 
+    padding: 5px;
+    display: none;
+    left: 47%;
+    padding-right: 25px;
+  }
+
+  .overlay-legumes{
+    position: absolute; 
+    width: auto;       
+    background-color: #7ca79f; 
+    border: 1px solid #000; 
+    padding: 5px;
+    display: none;
+    left: 57%;
+    padding-right: 25px;
+  }
+
+
+  <div class="nav-prod">
+    <nav>
+      <ul>
+        <li onclick="ExibirQuemSomos()"; ondblclick="FecharQuemSomos()"><a href="#" id="frutashover">Quem Somos</a></li>             
+        <li onclick="ExibirEntre()"; ondblclick="FecharEntre()"><a href="#" id="verdurashover">Entre</a></li>
+        <li onclick="ExibirCadastre()"; ondblclick="FecharCadastre()"><a href="#" id="legumeshover">Cadastre-se</a></li>  
+        <li onclick="ExibirMinhaCesta()"; ondblclick="FecharMinhaCesta()"><a href="#" id="legumeshover">Minha Cesta</a></li>  
+      </ul>
+    </nav>
+  </div>
+
+  
+  function ExibirQuemSomos() {
+    document.querySelector(".overlay-frutas").style.display = "block";
+    
+  }
+
+  function FecharQuemSomos() {
+    document.querySelector(".overlay-frutas").style.display = "none"
+  }
